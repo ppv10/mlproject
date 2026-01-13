@@ -1,1 +1,1 @@
-## End to End ML Project
+## End to End ML Project, heavily inspired by Krish Naik's Yotube video series on End to End ML Project With Deployment
