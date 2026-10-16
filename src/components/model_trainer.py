@@ -77,7 +77,7 @@ class ModelTrainer:
                 
             }
 
-            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models,param=params)
+            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,models=models,param=params)
 
             ## To get best model score from dict
             best_model_score = max(model_report.values())
@@ -90,7 +90,7 @@ class ModelTrainer:
 
             if best_model_score<0.6:
                 raise CustomException("No best model found", sys)
-            logging.info(f"Best found model on both training and testing dataset")
+            logging.info(f"Best model selected by training-only cross-validation: {best_model_name}")
 
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
